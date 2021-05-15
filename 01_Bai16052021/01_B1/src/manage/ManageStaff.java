@@ -1,3 +1,7 @@
+package manage;
+
+import person.Staff;
+
 public class ManageStaff implements Manage<Staff>{
     private Staff[] list = new Staff[100];
     private int size = 0;

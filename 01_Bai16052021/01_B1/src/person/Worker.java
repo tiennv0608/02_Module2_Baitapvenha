@@ -1,3 +1,5 @@
+package person;
+
 public class Worker extends Staff {
     private int level;
 
@@ -19,7 +21,7 @@ public class Worker extends Staff {
 
     @Override
     public String toString() {
-        return "Worker {" + super.toString() +
+        return "person.Worker {" + super.toString() +
                 ", level: " + level +
                 "} ";
     }

@@ -1,22 +1,31 @@
+package main;
+
+import manage.ManageStaff;
+import person.Engineer;
+import person.Officier;
+import person.Staff;
+import person.Worker;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int size = 0;
         Scanner scanner = new Scanner(System.in);
         ManageStaff manageStaff = new ManageStaff();
-        while (1>0) {
+        while (size<100) {
             System.out.println("Menu:");
-            System.out.println("1. Add Staff:");
-            System.out.println("2. Find Staff:");
-            System.out.println("3. Display Staff:");
+            System.out.println("1. Add person.Staff:");
+            System.out.println("2. Find person.Staff:");
+            System.out.println("3. Display person.Staff:");
             System.out.println("4. Exit");
             System.out.println("Enter your choice:");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
-                    System.out.println("1. Add Worker");
-                    System.out.println("2. Add Engineer");
-                    System.out.println("3. Add Officier");
+                    System.out.println("1. Add person.Worker");
+                    System.out.println("2. Add person.Engineer");
+                    System.out.println("3. Add person.Officier");
                     System.out.println("Enter position:");
                     String position = scanner.nextLine();
                     switch (position) {
@@ -36,6 +45,7 @@ public class Main {
                             Staff worker = new Worker(name, age, gender, address, level);
                             manageStaff.add(worker);
                             System.out.println(worker);
+                            size++;
                             break;
                         case "2":
                             System.out.println("Enter name:");
@@ -52,6 +62,7 @@ public class Main {
                             Staff engineer = new Engineer(name, age, gender, address, major);
                             manageStaff.add(engineer);
                             System.out.println(engineer);
+                            size++;
                             break;
                         case "3":
                             System.out.println("Enter name:");
@@ -68,6 +79,7 @@ public class Main {
                             Staff officier = new Officier(name, age, gender, address, job);
                             manageStaff.add(officier);
                             System.out.println(officier);
+                            size++;
                             break;
                         default:
                             System.out.println("Invalid");
