@@ -15,17 +15,17 @@ public class Main {
         ManageStaff manageStaff = new ManageStaff();
         while (size < 100) {
             System.out.println("Menu:");
-            System.out.println("1. Add person.Staff:");
-            System.out.println("2. Find person.Staff:");
-            System.out.println("3. Display person.Staff:");
+            System.out.println("1. Add Staff:");
+            System.out.println("2. Find Staff:");
+            System.out.println("3. Display Staff:");
             System.out.println("4. Exit");
             System.out.println("Enter your choice:");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
-                    System.out.println("1. Add person.Worker");
-                    System.out.println("2. Add person.Engineer");
-                    System.out.println("3. Add person.Officier");
+                    System.out.println("1. Add Worker");
+                    System.out.println("2. Add Engineer");
+                    System.out.println("3. Add Officier");
                     System.out.println("Enter position:");
                     String position = scanner.nextLine();
                     switch (position) {

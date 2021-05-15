@@ -21,7 +21,7 @@ public class Engineer extends Staff {
 
     @Override
     public String toString() {
-        return "person.Engineer {" + super.toString() +
+        return "Engineer {" + super.toString() +
                 ", major: '" + major + '\'' +
                 "} ";
     }
