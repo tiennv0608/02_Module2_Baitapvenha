@@ -88,6 +88,7 @@ public class Main {
                     }
                     break;
                 case "2":
+                    System.out.println("Enter id want to delete:");
                     int numericalOrder = scanner.nextInt();
                     manageDocument.delete(numericalOrder);
                     scanner.nextLine();
