@@ -89,7 +89,12 @@ public class Main {
                 case "2":
                     System.out.println("Enter name to find:");
                     String name = scanner.nextLine();
-                    manageStaff.find(name);
+                    int index = manageStaff.find(name);
+                    if (index != -1) {
+                        System.out.println("The staff is in position "+ (index+1) + "in the list");
+                    } else {
+                        System.out.println("The staff is not in the list");
+                    };
                     break;
                 case "3":
                     manageStaff.display();

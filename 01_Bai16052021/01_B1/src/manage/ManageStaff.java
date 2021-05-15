@@ -13,13 +13,13 @@ public class ManageStaff implements Manage<Staff>{
     }
 
     @Override
-    public void find(String name) {
+    public int find(String name) {
         for (int i = 0; i< size; i++){
             if (list[i].getName().equals(name)){
-                System.out.println(list[i]);
+                return i;
             }
         }
-        System.out.println("There is no staff");
+        return -1;
     }
 
     @Override

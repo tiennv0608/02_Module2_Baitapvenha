@@ -2,6 +2,6 @@ package manage;
 
 public interface Manage <Object> {
     void add(Object object);
-    void find(String name);
+    int find(String name);
     void display();
 }
