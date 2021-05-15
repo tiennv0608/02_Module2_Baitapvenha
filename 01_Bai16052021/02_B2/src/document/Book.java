@@ -31,7 +31,7 @@ public class Book extends Document {
 
     @Override
     public String toString() {
-        return "document.Book {" + super.toString() +
+        return "Book {" + super.toString() +
                 " authorName: '" + authorName + '\'' +
                 ", numberOfPage: " + numberOfPage +
                 "}";

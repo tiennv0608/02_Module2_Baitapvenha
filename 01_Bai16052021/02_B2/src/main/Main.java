@@ -7,25 +7,25 @@ import document.Magazine;
 import document.Newspaper;
 import manage.ManageDocument;
 
-public class Test {
+public class Main {
     public static void main(String[] args) {
         int size = 0;
         Scanner scanner = new Scanner(System.in);
         ManageDocument manageDocument = new ManageDocument();
         while (size < 100) {
             System.out.println("Menu:");
-            System.out.println("1. Add document.Document:");
-            System.out.println("2. Delete document.Document:");
-            System.out.println("3. Find document.Document:");
+            System.out.println("1. Add Document:");
+            System.out.println("2. Delete Document:");
+            System.out.println("3. Find Document:");
             System.out.println("4. Display list:");
             System.out.println("5. Exit");
             System.out.println("Enter your choice:");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
-                    System.out.println("1. Add document.Book");
-                    System.out.println("2. Add document.Magazine");
-                    System.out.println("3. Add document.Newspaper");
+                    System.out.println("1. Add Book");
+                    System.out.println("2. Add Magazine");
+                    System.out.println("3. Add Newspaper");
                     System.out.println("Enter position:");
                     String position = scanner.nextLine();
                     switch (position) {
@@ -97,9 +97,9 @@ public class Test {
                     int id = scanner.nextInt();
                     int index = manageDocument.find(id);
                     if (index != -1) {
-                        System.out.println("The staff is in position " + (index + 1) + "in the list");
+                        System.out.println("The document is in position " + (index + 1) + "in the list");
                     } else {
-                        System.out.println("The staff is not in the list");
+                        System.out.println("The document is not in the list");
                     }
                     scanner.nextLine();
                     break;

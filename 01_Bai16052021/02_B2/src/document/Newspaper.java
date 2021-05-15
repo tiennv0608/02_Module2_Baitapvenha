@@ -21,7 +21,7 @@ public class Newspaper extends Document {
 
     @Override
     public String toString() {
-        return "document.Newspaper {" + super.toString() +
+        return "Newspaper {" + super.toString() +
                 " releaseDay:'" + releaseDay + '\'' +
                 "} ";
     }

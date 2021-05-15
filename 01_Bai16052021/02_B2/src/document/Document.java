@@ -40,7 +40,7 @@ public abstract class Document {
 
     @Override
     public String toString() {
-        return "document.Document " +
+        return "Document " +
                 "id:" + id +
                 ", publishingCompany: '" + publishingCompany + '\'' +
                 ", amount: " + amount;

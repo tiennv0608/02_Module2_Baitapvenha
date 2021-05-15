@@ -31,7 +31,7 @@ public class Magazine extends Document {
 
     @Override
     public String toString() {
-        return "document.Magazine {" + super.toString() +
+        return "Magazine {" + super.toString() +
                 " releaseNumber: " + releaseNumber +
                 ", releaseMonth: '" + releaseMonth + '\'' +
                 "}";
