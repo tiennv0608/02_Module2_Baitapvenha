@@ -1,3 +1,5 @@
+package document;
+
 public class Book extends Document {
     private String authorName;
     private int numberOfPage;
@@ -29,7 +31,7 @@ public class Book extends Document {
 
     @Override
     public String toString() {
-        return "Book {" + super.toString() +
+        return "document.Book {" + super.toString() +
                 " authorName: '" + authorName + '\'' +
                 ", numberOfPage: " + numberOfPage +
                 "}";

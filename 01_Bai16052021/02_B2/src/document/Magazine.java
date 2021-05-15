@@ -1,3 +1,5 @@
+package document;
+
 public class Magazine extends Document {
     private int releaseNumber;
     private String releaseMonth;
@@ -29,7 +31,7 @@ public class Magazine extends Document {
 
     @Override
     public String toString() {
-        return "Magazine {" + super.toString() +
+        return "document.Magazine {" + super.toString() +
                 " releaseNumber: " + releaseNumber +
                 ", releaseMonth: '" + releaseMonth + '\'' +
                 "}";

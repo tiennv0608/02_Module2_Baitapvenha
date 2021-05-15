@@ -1,3 +1,5 @@
+package document;
+
 public abstract class Document {
     private int id;
     private String publishingCompany;
@@ -38,7 +40,7 @@ public abstract class Document {
 
     @Override
     public String toString() {
-        return "Document " +
+        return "document.Document " +
                 "id:" + id +
                 ", publishingCompany: '" + publishingCompany + '\'' +
                 ", amount: " + amount;

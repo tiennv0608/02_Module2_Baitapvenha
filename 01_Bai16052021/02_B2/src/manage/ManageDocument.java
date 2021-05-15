@@ -1,3 +1,7 @@
+package manage;
+
+import document.Document;
+
 public class ManageDocument implements Manage<Document> {
     private Document[] list = new Document[100];
     private int size = 0;

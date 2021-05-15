@@ -1,3 +1,5 @@
+package manage;
+
 public interface Manage<Object> {
     void add(Object object);
     void delete(int id);
