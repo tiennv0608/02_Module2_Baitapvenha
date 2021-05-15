@@ -10,8 +10,13 @@ public class ManageDocument implements Manage<Document> {
     }
 
     @Override
-    public void delete(Document object) {
-
+    public void delete(int id) {
+        int index = find(id);
+        for (int i = index; i<size;i++) {
+            list[i] = list[i+1];
+        }
+        size --;
+        display();
     }
 
     @Override

@@ -51,7 +51,7 @@ public abstract class Staff {
     @Override
     public String toString() {
         return "Name: '" + name + '\'' +
-                ", age: " + age +'\'' +
+                ", age: " + age + '\'' +
                 ", gender: " + gender +
                 ", address: '" + address + '\'';
     }

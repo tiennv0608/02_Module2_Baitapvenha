@@ -13,7 +13,7 @@ public class Main {
         int size = 0;
         Scanner scanner = new Scanner(System.in);
         ManageStaff manageStaff = new ManageStaff();
-        while (size<100) {
+        while (size < 100) {
             System.out.println("Menu:");
             System.out.println("1. Add person.Staff:");
             System.out.println("2. Find person.Staff:");
@@ -91,10 +91,11 @@ public class Main {
                     String name = scanner.nextLine();
                     int index = manageStaff.find(name);
                     if (index != -1) {
-                        System.out.println("The staff is in position "+ (index+1) + "in the list");
+                        System.out.println("The staff is in position " + (index + 1) + "in the list");
                     } else {
                         System.out.println("The staff is not in the list");
-                    };
+                    }
+                    ;
                     break;
                 case "3":
                     manageStaff.display();

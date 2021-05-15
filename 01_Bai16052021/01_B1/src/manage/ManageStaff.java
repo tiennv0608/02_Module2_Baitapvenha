@@ -2,7 +2,7 @@ package manage;
 
 import person.Staff;
 
-public class ManageStaff implements Manage<Staff>{
+public class ManageStaff implements Manage<Staff> {
     private Staff[] list = new Staff[100];
     private int size = 0;
 
@@ -14,8 +14,8 @@ public class ManageStaff implements Manage<Staff>{
 
     @Override
     public int find(String name) {
-        for (int i = 0; i< size; i++){
-            if (list[i].getName().equals(name)){
+        for (int i = 0; i < size; i++) {
+            if (list[i].getName().equals(name)) {
                 return i;
             }
         }
@@ -24,7 +24,7 @@ public class ManageStaff implements Manage<Staff>{
 
     @Override
     public void display() {
-        for (int i = 0; i<size;i++){
+        for (int i = 0; i < size; i++) {
             System.out.println(list[i]);
         }
     }
