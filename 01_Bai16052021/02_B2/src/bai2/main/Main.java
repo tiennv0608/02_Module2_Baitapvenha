@@ -94,15 +94,23 @@ public class Main {
                     scanner.nextLine();
                     break;
                 case "3":
-                    System.out.println("Enter name to find:");
-                    int id = scanner.nextInt();
-                    int index = manageDocument.find(id);
-                    if (index != -1) {
-                        System.out.println("The bai2.document is in position " + (index + 1) + "in the list");
-                    } else {
-                        System.out.println("The bai2.document is not in the list");
+                    System.out.println("1. Search Book");
+                    System.out.println("2. Search Magazine");
+                    System.out.println("3. Search Newspaper");
+                    System.out.println("Enter type:");
+                    String type = scanner.nextLine();
+                    switch (type){
+                        case "1":
+                            manageDocument.searchByBook();
+                            break;
+                        case "2":
+                            break;
+                        case "3":
+                            break;
+                        default:
+                            System.out.println("Wrong type");
+                            break;
                     }
-                    scanner.nextLine();
                     break;
                 case "4":
                     manageDocument.display();

@@ -1,6 +1,9 @@
 package bai2.manage;
 
+import bai2.document.Book;
 import bai2.document.Document;
+import bai2.document.Magazine;
+import bai2.document.Newspaper;
 
 public class ManageDocument implements Manage<Document> {
     private Document[] list = new Document[100];
@@ -16,11 +19,40 @@ public class ManageDocument implements Manage<Document> {
     @Override
     public void delete(int id) {
         int index = find(id);
-        for (int i = index; i<size;i++) {
-            list[i] = list[i+1];
+        for (int i = index; i < size; i++) {
+            list[i] = list[i + 1];
         }
-        size --;
+        size--;
         display();
+    }
+
+    @Override
+    public void searchByBook() {
+        for (int i = 0; i < size; i++) {
+            if (list[i] instanceof Book) {
+                System.out.println(list[i]);
+            }
+        }
+    }
+
+
+    @Override
+    public void searchByMagazine() {
+        for (int i = 0; i < size; i++) {
+            if (list[i] instanceof Magazine) {
+                System.out.println(list[i]);
+            }
+        }
+    }
+
+
+    @Override
+    public void searchByNewspaper() {
+        for (int i = 0; i < size; i++) {
+            if (list[i] instanceof Newspaper) {
+                System.out.println(list[i]);
+            }
+        }
     }
 
     @Override
@@ -33,10 +65,12 @@ public class ManageDocument implements Manage<Document> {
         return -1;
     }
 
+
     @Override
     public void display() {
-        for (int i = 0; i<size;i++){
+        for (int i = 0; i < size; i++) {
             System.out.println(list[i]);
         }
     }
+
 }
