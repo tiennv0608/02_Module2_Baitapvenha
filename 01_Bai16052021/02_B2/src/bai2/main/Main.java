@@ -1,11 +1,11 @@
-package main;
+package bai2.main;
 
 import java.util.Scanner;
-import document.Document;
-import document.Book;
-import document.Magazine;
-import document.Newspaper;
-import manage.ManageDocument;
+import bai2.document.Document;
+import bai2.document.Book;
+import bai2.document.Magazine;
+import bai2.document.Newspaper;
+import bai2.manage.ManageDocument;
 
 public class Main {
     public static void main(String[] args) {
@@ -98,9 +98,9 @@ public class Main {
                     int id = scanner.nextInt();
                     int index = manageDocument.find(id);
                     if (index != -1) {
-                        System.out.println("The document is in position " + (index + 1) + "in the list");
+                        System.out.println("The bai2.document is in position " + (index + 1) + "in the list");
                     } else {
-                        System.out.println("The document is not in the list");
+                        System.out.println("The bai2.document is not in the list");
                     }
                     scanner.nextLine();
                     break;

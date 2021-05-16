@@ -1,4 +1,4 @@
-package document;
+package bai2.document;
 
 public abstract class Document {
     private int id;

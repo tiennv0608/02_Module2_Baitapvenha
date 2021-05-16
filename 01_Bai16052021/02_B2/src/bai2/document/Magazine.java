@@ -1,4 +1,4 @@
-package document;
+package bai2.document;
 
 public class Magazine extends Document {
     private int releaseNumber;

@@ -1,4 +1,4 @@
-package document;
+package bai2.document;
 
 public class Book extends Document {
     private String authorName;

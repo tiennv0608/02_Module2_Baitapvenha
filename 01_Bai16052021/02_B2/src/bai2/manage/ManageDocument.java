@@ -1,6 +1,6 @@
-package manage;
+package bai2.manage;
 
-import document.Document;
+import bai2.document.Document;
 
 public class ManageDocument implements Manage<Document> {
     private Document[] list = new Document[100];

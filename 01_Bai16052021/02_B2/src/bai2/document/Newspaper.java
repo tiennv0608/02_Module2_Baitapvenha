@@ -1,4 +1,4 @@
-package document;
+package bai2.document;
 
 public class Newspaper extends Document {
     private String releaseDay;
