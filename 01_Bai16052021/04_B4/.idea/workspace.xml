@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20fc3bcd-a3de-4ae2-9c94-0bf7de7c071f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_B4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai2/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai2/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai2/manage/Manage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai2/manage/Manage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai2/manage/ManageDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai2/manage/ManageDocument.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../02_B2/out/production/03_B3/bai3/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02_B2/src/bai2/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../02_B2/src/bai2/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02_B2/src/bai2/manage/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../02_B2/src/bai2/manage/Manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02_B2/src/bai2/manage/ManageDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/../02_B2/src/bai2/manage/ManageDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Family.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Town.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +37,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="04_B4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -57,6 +55,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -66,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621137384007</updated>
-      <workItem from="1621137386826" duration="753000" />
+      <workItem from="1621137386826" duration="5703000" />
     </task>
     <servers />
   </component>
