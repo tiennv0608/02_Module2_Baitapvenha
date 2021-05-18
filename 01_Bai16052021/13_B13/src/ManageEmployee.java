@@ -28,7 +28,8 @@ public class ManageEmployee {
         }
         return -1;
     }
-    public void editEmployees(Scanner scanner,int index){
+
+    public void editEmployees(Scanner scanner, int index) {
         System.out.println("Edit ID");
         this.employees[index].setId(scanner.nextLine());
         System.out.println("Edit full name");
@@ -45,15 +46,16 @@ public class ManageEmployee {
     }
 
     public void editExperience(Scanner scanner, int index) {
-        editEmployees(scanner,index);
+        editEmployees(scanner, index);
         System.out.println("Edit exp in year");
         ((Experience) this.employees[index]).setExpInYear(scanner.nextInt());
         scanner.nextLine();
         System.out.println("Edit pro skill");
         ((Experience) this.employees[index]).setProSkill(scanner.nextLine());
     }
+
     public void editFresher(Scanner scanner, int index) {
-        editEmployees(scanner,index);
+        editEmployees(scanner, index);
         System.out.println("Edit graduation date");
         ((Fresher) this.employees[index]).setGraduationDate(scanner.nextLine());
         System.out.println("Edit graduation rank");
@@ -61,8 +63,9 @@ public class ManageEmployee {
         System.out.println("Edit education");
         ((Fresher) this.employees[index]).setEducation(scanner.nextLine());
     }
+
     public void editIntern(Scanner scanner, int index) {
-        editEmployees(scanner,index);
+        editEmployees(scanner, index);
         System.out.println("Edit major");
         ((Intern) this.employees[index]).setMajors(scanner.nextLine());
         System.out.println("Edit semester");
@@ -78,21 +81,30 @@ public class ManageEmployee {
             System.out.println("There is no employee in the list");
         } else {
             if (this.employees[index] instanceof Experience) {
-                editExperience(scanner,index);
+                editExperience(scanner, index);
             } else if (this.employees[index] instanceof Fresher) {
-                editFresher(scanner,index);
+                editFresher(scanner, index);
             } else {
-                editIntern(scanner,index);
+                editIntern(scanner, index);
             }
         }
     }
+
     public void deleteEmployee(String id) {
         int index = searchEmployee(id);
-        if (index !=-1) {
-            for (int i = index; i<this.size-1;i++) {
-                this.employees[i] = this.employees[i+1];
+        if (index != -1) {
+            for (int i = index; i < this.size - 1; i++) {
+                this.employees[i] = this.employees[i + 1];
             }
             this.size--;
+        }
+    }
+
+    public void searchEmployee(int type) {
+        for (int i = 0; i < this.size; i++) {
+            if (this.employees[i].getEmployeeType() == type) {
+                System.out.println(this.employees[i]);
+            }
         }
     }
 }
