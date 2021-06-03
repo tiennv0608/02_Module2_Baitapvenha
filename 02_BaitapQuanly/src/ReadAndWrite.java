@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWrite {
-    static List<Student> readFile(String path) throws IOException {
+    static List<Student> readFromFile(String path) throws IOException {
         List<Student> list = new ArrayList<>();
         FileReader fr = new FileReader(path);
         BufferedReader br = new BufferedReader(fr);
@@ -23,13 +23,13 @@ public class ReadAndWrite {
         return list;
     }
 
-    static void writeFile(String path, List<Student> list) {
+    static void writeToFile(String path, List<Student> list) {
         FileWriter fw;
         BufferedWriter bw;
         try {
             fw = new FileWriter(path);
             bw = new BufferedWriter(fw);
-            bw.write("ID,Full Name,Birthday,Gender,Address,Email,Score");
+            String str = "ID,Full Name,Birthday,Gender,Address,Email,Score\n";
             for (Student student : list) {
                 String gender = "";
                 if (student.getGender() == 1) {
@@ -37,10 +37,11 @@ public class ReadAndWrite {
                 } else if (student.getGender() == 2) {
                     gender = "Nu";
                 }
-                bw.write(student.getId() + "," + student.getFullName() + "," + student.getBirthDay() +
+                str += student.getId() + "," + student.getFullName() + "," + student.getBirthDay() +
                         "," + gender + "," + student.getAddress() + "," + student.getEmail() +
-                        "," + student.getScore() + "\n");
+                        "," + student.getScore() + "\n";
             }
+            bw.write(str);
             bw.close();
             fw.close();
         } catch (IOException e) {

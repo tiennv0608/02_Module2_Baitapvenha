@@ -1,1 +1,6 @@
-Student{id: 'C0321K01', fullName: 'Doan Hong Son', age: 22, gender: Nam', address: 'Nam Dinh', email: 'doanhongson0509@gmail.com', score: 8.9}Student{id: 'C0321G03', fullName: 'Nguyen Trung Hieu', age: 22, gender: Nam', address: 'Ha Noi', email: 'trunghieu@gmail.com', score: 9.8}Student{id: 'C0321I02', fullName: 'Le Tuan Anh', age: 27, gender: Nam', address: 'Nghe An', email: 'tuananhle@gmail.com', score: 9.8}Student{id: 'C0378G02', fullName: 'Do Ngoc Anh', age: 20, gender: Nu', address: 'Thai Binh', email: 'nanhdo@gmail.com', score: 7.7}Student{id: 'C0321K02', fullName: 'Tran Trung Hieu', age: 25, gender: Nam', address: 'Ho Chi Minh', email: 'hieutt@gmail.com', score: 8.0}
+ID,Full Name,Birthday,Gender,Address,Email,Score
+C0987K02,Luon Hong Son,19-12-2000,Nam,Nam Dinh,son.luon@codegym.vn,6.5
+C0378G02,Do Ngoc Anh,07-08-2001,Nu,Thai Binh,nanhdo@gmail.com,7.7
+C0321K01,Doan Hong Son,01-02-1999,Nam,Nam Dinh,doanhongson0509@gmail.com,8.9
+C0321I02,Le Tuan Anh,05-04-1994,Nam,Nghe An,tuananhle@gmail.com,9.8
+C0508K02,Tran Trung Hieu,25-05-1999,Nu,Bac Giang,huyen.thu@codegym.vn,9.9
