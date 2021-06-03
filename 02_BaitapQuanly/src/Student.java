@@ -1,3 +1,5 @@
+import java.time.Year;
+
 public class Student {
     private String id;
     private String fullName;
@@ -79,7 +81,7 @@ public class Student {
     @Override
     public String toString() {
         String year = getBirthDay().substring(6);
-        int age = 2021 - Integer.parseInt(year);
+        int age = Integer.parseInt(String.valueOf(Year.now())) - Integer.parseInt(year);
         String sex = "";
         if (getGender() == 1) {
             sex = "Nam";

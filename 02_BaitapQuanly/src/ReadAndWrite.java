@@ -45,7 +45,7 @@ public class ReadAndWrite {
             bw.close();
             fw.close();
         } catch (IOException e) {
-            System.err.println("No file detected!");
+            System.out.println("No file detected!");
         }
 
     }

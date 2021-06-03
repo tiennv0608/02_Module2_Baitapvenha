@@ -1,8 +1,9 @@
 import java.io.IOException;
+import java.time.Year;
 import java.util.*;
 
 public class StudentManagement {
-    private List<Student> list;
+    List<Student> list;
     List<Student> searchingList = null;
     Scanner scanner = new Scanner(System.in);
     Validation validation = new Validation();
@@ -36,7 +37,7 @@ public class StudentManagement {
             id = validateData(validation.ID_REGEX);
             check = checkID(id);
             if (!check) {
-                System.out.println("Dupicated ID, re input:");
+                System.out.print("Dupicated ID, re input:");
             }
         } while (!check);
         System.out.print("Enter full name: ");
@@ -55,7 +56,7 @@ public class StudentManagement {
             try {
                 score = scanner.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println("Wrong type, re input:");
+                System.out.print("Wrong type, re input:");
             } finally {
                 scanner.nextLine();
             }
@@ -118,7 +119,7 @@ public class StudentManagement {
         searchingList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             String year = list.get(i).getBirthDay().substring(6);
-            int age = 2021 - Integer.parseInt(year);
+            int age = Integer.parseInt(String.valueOf(Year.now())) - Integer.parseInt(year);
             if (age >= lowerAge && age <= higherAge) {
                 searchingList.add(list.get(i));
             }
@@ -133,7 +134,7 @@ public class StudentManagement {
             try {
                 lowerScore = scanner.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println("Wrong type, re input:");
+                System.out.print("Wrong type, re input:");
             } finally {
                 scanner.nextLine();
             }
@@ -144,7 +145,7 @@ public class StudentManagement {
             try {
                 higherScore = scanner.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println("Wrong type, re input:");
+                System.out.print("Wrong type, re input:");
             } finally {
                 scanner.nextLine();
             }
@@ -160,7 +161,6 @@ public class StudentManagement {
     }
 
     public void confirmDeleteStudent() {
-        System.out.print("Confirm? (Y/N): ");
         String confirm = scanner.nextLine();
         if (confirm.equalsIgnoreCase("Y")) {
             list.removeAll(searchingList);
@@ -175,7 +175,7 @@ public class StudentManagement {
         if (searchingList.size() == 0) {
             System.out.println("No student was found!");
         } else {
-            System.out.println("Do you want to delete this student?");
+            System.out.print("Do you want to delete this student? (Press Y to confirm): ");
             confirmDeleteStudent();
         }
     }
@@ -216,7 +216,7 @@ public class StudentManagement {
             string = scanner.nextLine();
             check = validation.validate(regex, string);
             if (!check) {
-                System.out.println("Wrong input, re input: ");
+                System.out.print("Wrong input, re input: ");
             }
         } while (!check);
         return string;
@@ -236,12 +236,8 @@ public class StudentManagement {
     public void editBirthDay(Student student) {
         System.out.print("Enter birthday: ");
         String birthDay = validateData(validation.DATE_OF_BIRTH_REGEX);
-        if (!birthDay.equals("")) {
-            student.setBirthDay(birthDay);
-            System.out.println("Update successful!");
-        } else {
-            System.out.println("Update failed!");
-        }
+        student.setBirthDay(birthDay);
+        System.out.println("Update successful!");
     }
 
     public void editGender(Student student) {
@@ -256,18 +252,17 @@ public class StudentManagement {
         String address = scanner.nextLine();
         if (!address.equals("")) {
             student.setAddress(address);
+            System.out.println("Update successful!");
+        } else {
+            System.out.println("Update failed!");
         }
     }
 
     public void editEmail(Student student) {
         System.out.print("Enter email: ");
         String email = validateData(validation.EMAIL_REGEX);
-        if (!email.equals("")) {
-            student.setEmail(email);
-            System.out.println("Update successful!");
-        } else {
-            System.out.println("Update failed!");
-        }
+        student.setEmail(email);
+        System.out.println("Update successful!");
     }
 
     public void editScore(Student student) {
@@ -277,12 +272,13 @@ public class StudentManagement {
             try {
                 score = scanner.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println("Wrong type, re input:");
+                System.out.print("Wrong type, re input:");
             } finally {
                 scanner.nextLine();
             }
         }
         student.setScore(score);
+        System.out.println("Update successful!");
     }
 
     public void editInformation(Student student) {
@@ -294,8 +290,9 @@ public class StudentManagement {
         editScore(student);
     }
 
-    public void writeToFile(){
-        ReadAndWrite.writeToFile("new.csv",list);
+    public void writeToFile() {
+        ReadAndWrite.writeToFile("new.csv", list);
+        System.out.println("Write complete!");
     }
 
     public List<Student> readFromFile() throws IOException {
