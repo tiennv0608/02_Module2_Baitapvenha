@@ -7,23 +7,8 @@ public class Validation {
     final String DATE_OF_BIRTH_REGEX = "^(0{1}[1-9]|[12][0-9]|3[01])-(0{1}[1-9]|1[0-2])-\\d\\d\\d\\d";
     final String GENDER_REGEX = "[1|2]";
 
-    public boolean validateID(String string){
-        Pattern pattern = Pattern.compile(ID_REGEX);
-        Matcher matcher = pattern.matcher(string);
-        return matcher.matches();
-    }
-    public boolean validateEmail(String string){
-        Pattern pattern = Pattern.compile(EMAIL_REGEX);
-        Matcher matcher = pattern.matcher(string);
-        return matcher.matches();
-    }
-    public boolean validateBirthDay(String string){
-        Pattern pattern = Pattern.compile(DATE_OF_BIRTH_REGEX);
-        Matcher matcher = pattern.matcher(string);
-        return matcher.matches();
-    }
-    public boolean validateGender(String string){
-        Pattern pattern = Pattern.compile(GENDER_REGEX);
+    public boolean validate(String stringRegex, String string){
+        Pattern pattern = Pattern.compile(stringRegex);
         Matcher matcher = pattern.matcher(string);
         return matcher.matches();
     }

@@ -15,50 +15,36 @@ public class StudentManagement {
         }
     }
 
+    public boolean checkID(String id) {
+        for (Student student : list) {
+            if (student.getId().equals(id)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public Student createStudent() {
+        System.out.print("Enter id: ");
         String id;
         boolean check = false;
         do {
-            System.out.println("Enter id: ");
-            id = scanner.nextLine();
-            check = validation.validateID(id);
+            id = validateData(validation.ID_REGEX);
+            check = checkID(id);
             if (!check) {
-                System.out.println("Wrong input!");
+                System.out.println("Dupicated ID, re input:");
             }
         } while (!check);
         System.out.print("Enter full name: ");
         String fullName = scanner.nextLine();
-        String birthDay;
-        do {
-            System.out.println("Enter birthday: ");
-            birthDay = scanner.nextLine();
-            check = validation.validateBirthDay(birthDay);
-            if (!check) {
-                System.out.println("Wrong input!");
-            }
-        } while (!check);
-        int gender;
-        do {
-            System.out.print("Enter gender: ");
-            gender = scanner.nextInt();
-            scanner.nextLine();
-            check = validation.validateGender(Integer.toString(gender));
-            if (!check) {
-                System.out.println("Wrong input!");
-            }
-        } while (!check);
+        System.out.print("Enter birthday: ");
+        String birthDay = validateData(validation.DATE_OF_BIRTH_REGEX);
+        System.out.print("Enter gender (1.Nam/2.Nu): ");
+        int gender = Integer.parseInt(validateData(validation.GENDER_REGEX));
         System.out.print("Enter address: ");
         String address = scanner.nextLine();
-        String email;
-        do {
-            System.out.print("Enter email: ");
-            email = scanner.nextLine();
-            check = validation.validateEmail(email);
-            if (!check) {
-                System.out.println("Wrong input!");
-            }
-        } while (!check);
-
+        System.out.print("Enter email: ");
+        String email = validateData(validation.EMAIL_REGEX);
         System.out.print("Enter score: ");
         double score = scanner.nextDouble();
         scanner.nextLine();
@@ -184,8 +170,10 @@ public class StudentManagement {
         Collections.sort(list, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
-                if ((o1.getScore() > o2.getScore()) || (o1.getScore() < o2.getScore())) {
-                    return (int) (o1.getScore() - o2.getScore());
+                if (o1.getScore() > o2.getScore()) {
+                    return 1;
+                } else if (o1.getScore() < o2.getScore()) {
+                    return -1;
                 } else {
                     return o1.getFullName().compareTo(o2.getFullName());
                 }
@@ -193,82 +181,108 @@ public class StudentManagement {
         });
     }
 
+    public String validateData(String regex) {
+        String string;
+        boolean check = false;
+        do {
+            string = scanner.nextLine();
+            check = validation.validate(regex, string);
+            if (!check) {
+                System.out.println("Wrong input, re input: ");
+            }
+        } while (!check);
+        return string;
+    }
+
+    public void editID(Student student) {
+        System.out.print("Enter ID: ");
+        String id;
+        boolean check = false;
+        do {
+            id = validateData(validation.ID_REGEX);
+            check = checkID(id);
+            if (!check) {
+                System.out.println("Dupicated ID, re input:");
+            }
+        } while (!check);
+        if (!id.equals("")) {
+            student.setId(id);
+            System.out.println("Update successful!");
+        } else {
+            System.out.println("Update failed!");
+        }
+        ReadAndWrite.writeFile("new.csv", list);
+    }
+
     public void editName(Student student) {
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
         if (!name.equals("")) {
             student.setFullName(name);
+            System.out.println("Update successful!");
+        } else {
+            System.out.println("Update failed!");
         }
-        try {
-            ReadAndWrite.writeFile("new.csv", list);
-        } catch (IOException e) {
-            System.out.println("Khong tim thay file hoac file loi");
-        }
+        ReadAndWrite.writeFile("new.csv", list);
     }
 
-    public void editBirthday(Student student) {
+    public void editBirthDay(Student student) {
         System.out.print("Enter birthday: ");
-        String birthDay = scanner.nextLine();
-        if (age > 0 && age <= 100) {
-            student.setAge(age);
+        String birthDay = validateData(validation.DATE_OF_BIRTH_REGEX);
+        if (!birthDay.equals("")) {
+            student.setBirthDay(birthDay);
+            System.out.println("Update successful!");
+        } else {
+            System.out.println("Update failed!");
         }
-        writeFile("customermanagement.csv");
+        ReadAndWrite.writeFile("new.csv", list);
     }
 
-    public void editGender(Customer customer) {
-        int gender;
-        do {
-            System.out.print("Enter gender (1.Male/2.Female): ");
-            int value = -1;
-            gender = checkInputType(value);
-            if (gender == 1 || gender == 2) {
-                customer.setGender(gender);
-            } else {
-                System.out.print("Wrong input, re input (1.Male/2.Female): ");
-            }
-        } while (gender != 1 && gender != 2);
-        writeFile("customermanagement.csv");
+    public void editGender(Student student) {
+        System.out.print("Enter gender (1.Male/2.Female): ");
+        int gender = Integer.parseInt(validateData(validation.GENDER_REGEX));
+        student.setGender(gender);
+        System.out.println("Update successful!");
+        ReadAndWrite.writeFile("new.csv", list);
     }
 
-    public void editAddress(Customer customer) {
+    public void editAddress(Student student) {
         System.out.print("Enter address: ");
         String address = scanner.nextLine();
         if (!address.equals("")) {
-            customer.setAddress(address);
+            student.setAddress(address);
         }
-        writeFile("customermanagement.csv");
+        ReadAndWrite.writeFile("new.csv", list);
     }
 
-    public void editJob(Customer customer) {
-        System.out.print("Enter job: ");
-        String job = scanner.nextLine();
-        if (!job.equals("")) {
-            customer.setJob(job);
+    public void editEmail(Student student) {
+        System.out.print("Enter email: ");
+        String email = validateData(validation.EMAIL_REGEX);
+        if (!email.equals("")) {
+            student.setEmail(email);
+            System.out.println("Update successful!");
+        } else {
+            System.out.println("Update failed!");
         }
-        writeFile("customermanagement.csv");
+        ReadAndWrite.writeFile("new.csv", list);
     }
 
-    public void editPhone(Customer customer) {
-        System.out.print("Enter phone: ");
-        String phone = scanner.nextLine();
-        if (!phone.equals("")) {
-            if (phone.length() < 10) {
-                System.err.print("Number phone too short, re input (10 numbers): ");
-            } else if (phone.length() > 10) {
-                System.err.print("Number phone too long, re input (10 numbers): ");
-            } else {
-                customer.setPhone(phone);
-            }
-        }
-        writeFile("customermanagement.csv");
+    public void editScore(Student student) {
+        System.out.print("Enter score: ");
+        Double score = scanner.nextDouble();
+        scanner.nextLine();
+        student.setScore(score);
+        ReadAndWrite.writeFile("new.csv", list);
     }
 
-    public void editInformation(Customer customer) {
-        editName(customer);
-        editAge(customer);
-        editGender(customer);
-        editAddress(customer);
-        editJob(customer);
-        editPhone(customer);
-        writeFile("customermanagement.csv");
+    public void editInformation(Student student) {
+        editID(student);
+        editName(student);
+        editBirthDay(student);
+        editGender(student);
+        editAddress(student);
+        editEmail(student);
+        editScore(student);
+        ReadAndWrite.writeFile("new.csv", list);
     }
+}

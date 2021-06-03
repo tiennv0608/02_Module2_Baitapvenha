@@ -23,21 +23,29 @@ public class ReadAndWrite {
         return list;
     }
 
-    static void writeFile(String path, List<Student> list) throws IOException {
-        FileWriter fw = new FileWriter(path);
-        BufferedWriter bw = new BufferedWriter(fw);
-        for (Student student : list) {
-            String gender = "";
-            if (student.getGender() == 1) {
-                gender = "Nam";
-            } else if (student.getGender() == 2) {
-                gender = "Nu";
+    static void writeFile(String path, List<Student> list) {
+        FileWriter fw;
+        BufferedWriter bw;
+        try {
+            fw = new FileWriter(path);
+            bw = new BufferedWriter(fw);
+            bw.write("ID,Full Name,Birthday,Gender,Address,Email,Score");
+            for (Student student : list) {
+                String gender = "";
+                if (student.getGender() == 1) {
+                    gender = "Nam";
+                } else if (student.getGender() == 2) {
+                    gender = "Nu";
+                }
+                bw.write(student.getId() + "," + student.getFullName() + "," + student.getBirthDay() +
+                        "," + gender + "," + student.getAddress() + "," + student.getEmail() +
+                        "," + student.getScore() + "\n");
             }
-            bw.write(student.getId() + "," + student.getFullName() + "," + student.getBirthDay() +
-                    "," + gender + "," + student.getAddress() + "," + student.getEmail() +
-                    "," + student.getScore() + "\n");
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            System.err.println("No file detected!");
         }
-        bw.close();
-        fw.close();
+
     }
 }

@@ -117,13 +117,14 @@ public class Main {
 
     static void editingMenu() {
         System.out.println("Editing menu");
-        System.out.println("1. Edit name");
-        System.out.println("2. Edit age");
-        System.out.println("3. Edit gender");
-        System.out.println("4. Edit address");
-        System.out.println("5. Edit job");
-        System.out.println("6. Edit phone");
-        System.out.println("7. Edit whole information");
+        System.out.println("1. Edit ID");
+        System.out.println("2. Edit name");
+        System.out.println("3. Edit birthday");
+        System.out.println("4. Edit gender");
+        System.out.println("5. Edit address");
+        System.out.println("6. Edit email");
+        System.out.println("7. Edit score");
+        System.out.println("8. Edit whole information");
         System.out.print("Enter your option: ");
     }
 
